@@ -59,9 +59,10 @@ function App() {
     return `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
   };
 
-  // Get video preview URL - use embed format for better subtitle support and hide redirect options
+  // Get video preview URL - use embed format for better subtitle support
+  // The overlay div will block access to the popout button
   const getVideoUrl = (fileId) => {
-    // Use embed format which hides the "Open in Google Drive" redirect option
+    // Use embed format which provides better embedding experience
     return `https://drive.google.com/file/d/${fileId}/preview?usp=embed_website`;
   };
 
@@ -366,6 +367,32 @@ function App() {
                   }}
                   title={selectedMovie.title}
                 />
+                {/* Overlay to block popout button area (top-right corner) - prevents access to Google Drive file */}
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    width: '120px',
+                    height: '80px',
+                    zIndex: 10,
+                    cursor: 'default',
+                    pointerEvents: 'auto',
+                    backgroundColor: 'transparent'
+                  }} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}
+                  onContextMenu={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}
+                />
               </div>
               
               {/* Subtitles info note */}
@@ -456,6 +483,11 @@ function App() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+        
+        /* Hide Google Drive popout button and other UI elements */
+        iframe[src*="drive.google.com"] {
+          pointer-events: auto;
         }
       `}</style>
     </div>
