@@ -1,22 +1,50 @@
 // Array of movies for PookieFlix
-// Each movie is an object with id, title, and url properties
+// Each movie is an object with id, title, url, thumbnail, and AI-generated info
+
+import aashiqui2Img from './assets/aashiqui2.jpg';
 
 export const movies = [
   {
     id: 1,
-    title: "Aashiqui 2 ❤️",
-    // Just paste the file ID here (the long string after id= in your Google Drive URL)
-    url: "1l21EsmnuqiMPF_REm8EG4GtJI8AMQrf6"
+    title: "Aashiqui 2",
+    url: "1l21EsmnuqiMPF_REm8EG4GtJI8AMQrf6",
+    thumbnail: aashiqui2Img,
+    genre: "Romance/Drama",
+    rating: "8.0",
+    year: 2013,
+    cast: [
+      { name: "Aditya Roy Kapur", image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Aditya_Roy_Kapur_at_the_Bollywood_Hungama_Style_Icons_Awards_2023.jpg" },
+      { name: "Shraddha Kapoor", image: ""}],
+    duration: "130 min",
+    summary: "A talented musician and a nightclub performer fall in love, but their relationship faces challenges as they pursue their dreams in the music industry."
   },
   {
     id: 2,
-    title: "Movie 2",
-    url: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID_2"
+    title: "Untitled",
+    url: "YOUR_FILE_ID_2",
+    thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
+    genre: "Drama",
+    rating: "9.3",
+    year: 1994,
+    cast: [
+      { name: "Coming Soon", image: "https://images.unsplash.com/photo-1535713214d7e6b88b29bd43e1df4d1d20e1a56bb?w=150&h=150&fit=crop" }
+    ],
+    duration: "-- min",
+    summary: "Content coming soon. Add your movie details here."
   },
   {
     id: 3,
-    title: "Movie 3",
-    url: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID_3"
+    title: "Untitled",
+    url: "YOUR_FILE_ID_3",
+    thumbnail: "https://images.unsplash.com/photo-1559329007-40790c361539?w=400&h=600&fit=crop",
+    genre: "Action/Thriller/Sci-Fi",
+    rating: "8.8",
+    year: 2010,
+    cast: [
+      { name: "Coming Soon", image: "https://images.unsplash.com/photo-1535713214d7e6b88b29bd43e1df4d1d20e1a56bb?w=150&h=150&fit=crop" }
+    ],
+    duration: "-- min",
+    summary: "Content coming soon. Add your movie details here."
   }
 ];
 

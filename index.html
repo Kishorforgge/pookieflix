@@ -2,11 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PookieFlix - Watch Movies Online</title>
+    <meta
+      name="description"
+      content="PookieFlix – Stream movies instantly with a clean dark UI"
+    />
+
+    <title>PookieFlix | Watch Movies Online</title>
+
+    <!-- PREVENT WHITE FLASH -->
+    <style>
+      html, body {
+        margin: 0;
+        background-color: #0f0f0f;
+        color: #ffffff;
+      }
+    </style>
   </head>
-  <body>
+
+  <body class="dark">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
